@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Set-2018 às 07:07
+-- Generation Time: 11-Set-2018 às 06:53
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -30,10 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alunos` (
   `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   `matricula` int(10) UNSIGNED NOT NULL,
   `nome` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `curso_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -41,10 +42,10 @@ CREATE TABLE `alunos` (
 -- Extraindo dados da tabela `alunos`
 --
 
-INSERT INTO `alunos` (`id`, `created_at`, `updated_at`, `matricula`, `nome`, `curso_id`) VALUES
-(1, '2018-09-03 06:32:14', '2018-09-03 07:16:18', 2016004, 'JOSE', 1),
-(2, '2018-09-03 07:22:58', '2018-09-03 07:30:07', 2016005, 'ANA MARIA', 1),
-(3, '2018-09-03 07:24:43', '2018-09-03 07:30:26', 2016006, 'REGINA', 1);
+INSERT INTO `alunos` (`id`, `matricula`, `nome`, `email`, `created_at`, `updated_at`, `curso_id`) VALUES
+(1, 2016004, 'JOSE', 'jose@iesb.br', '2018-09-11 07:42:12', '2018-09-11 07:42:12', 1),
+(2, 2016005, 'ANA MARIA', NULL, '2018-09-11 07:27:40', '2018-09-11 07:27:40', NULL),
+(3, 2016006, 'DIANA', NULL, '2018-09-11 07:29:24', '2018-09-11 07:29:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -65,9 +66,9 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id`, `created_at`, `updated_at`, `nome`, `carga_horaria`) VALUES
-(1, '2018-09-03 07:04:27', '2018-09-03 07:04:27', 'Analise e Desenvolvimento de Sistemas', 2100),
-(2, '2018-09-03 07:05:06', '2018-09-03 07:05:06', 'Seguranca da Informacao', 2000),
-(3, '2018-09-03 07:05:26', '2018-09-03 07:05:26', 'Redes de Computadores', 2000);
+(1, '2018-09-11 07:35:03', '2018-09-11 07:35:03', 'Analise e Desenvolvimento de Sistemas', 2100),
+(2, '2018-09-11 07:36:23', '2018-09-11 07:36:23', 'Seguranca da Informacao', 2000),
+(3, '2018-09-11 07:37:06', '2018-09-11 07:37:06', 'Redes de Computadores', 2000);
 
 -- --------------------------------------------------------
 
@@ -86,9 +87,9 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(7, '2018_09_03_022025_cria_tabela_alunos', 1),
-(8, '2018_09_03_034656_cria_tabela_cursos', 2),
-(9, '2018_09_03_040727_adiciona_curso_na_tabela_alunos', 3);
+(1, '2018_09_03_022025_cria_tabela_alunos', 1),
+(2, '2018_09_03_034656_cria_tabela_cursos', 1),
+(3, '2018_09_03_040727_adiciona_curso_na_tabela_alunos', 1);
 
 --
 -- Indexes for dumped tables
@@ -121,7 +122,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cursos`
@@ -133,7 +134,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
