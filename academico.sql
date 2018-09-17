@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Set-2018 às 06:53
+-- Generation Time: 17-Set-2018 às 03:37
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -43,9 +43,10 @@ CREATE TABLE `alunos` (
 --
 
 INSERT INTO `alunos` (`id`, `matricula`, `nome`, `email`, `created_at`, `updated_at`, `curso_id`) VALUES
-(1, 2016004, 'JOSE', 'jose@iesb.br', '2018-09-11 07:42:12', '2018-09-11 07:42:12', 1),
-(2, 2016005, 'ANA MARIA', NULL, '2018-09-11 07:27:40', '2018-09-11 07:27:40', NULL),
-(3, 2016006, 'DIANA', NULL, '2018-09-11 07:29:24', '2018-09-11 07:29:24', NULL);
+(1, 2016004, 'JOSE', 'jose@iesb.br', '2018-09-11 07:42:12', '2018-09-17 04:34:38', 3),
+(2, 2016005, 'ANA MARIA', 'aninha@iesb.br', '2018-09-11 07:27:40', '2018-09-17 04:24:07', 2),
+(3, 2016006, 'DIANA', NULL, '2018-09-11 07:29:24', '2018-09-17 04:34:44', NULL),
+(4, 2018001, 'João Andante', 'joaoandante@iesb.br', '2018-09-17 04:34:21', '2018-09-17 04:34:21', 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cursos`
